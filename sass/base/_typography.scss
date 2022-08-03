@@ -1,0 +1,17 @@
+.main-heading {
+    &--primary {
+        font-size: 6rem;
+    letter-spacing: 3.5rem;
+    font-weight: 400;
+    animation-name: move-in-left;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    }
+
+    &--sub {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+        animation: move-in-right 1s ease-out;
+    }
+}
