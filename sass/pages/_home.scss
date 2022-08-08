@@ -1,0 +1,22 @@
+.section-about {
+    padding: 10% 0;
+    background-color: $color-gray-light-1;
+    padding: 25rem 0;
+    margin-block-start: -20vh;
+    display: grid;
+    grid-template-rows: 2;
+    grid-template-columns: 10% 1fr 1fr 10%;
+    grid-template-areas: 'heading heading heading heading'
+                         '. . . .';
+    row-gap: 4rem;
+    justify-items: center;
+    align-items: center;
+}
+
+#about-info {
+    grid-area: 2 / 2 / 2 / 3;
+}
+
+#about-images {
+    grid-area: 2 / 3 / 2 / 4;
+}
