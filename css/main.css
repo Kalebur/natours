@@ -162,6 +162,18 @@ body {
   margin-bottom: 8rem;
 }
 
+.u-margin-top-small {
+  margin-top: 1.5rem;
+}
+
+.u-margin-top-medium {
+  margin-top: 4rem;
+}
+
+.u-margin-top-big {
+  margin-top: 8rem;
+}
+
 .u-grid-center {
   align-self: center;
 }
@@ -438,6 +450,16 @@ body {
   padding-left: 9rem;
   font-size: 2rem;
   transform: skewX(-12deg);
+  -webkit-margin-before: 4rem;
+          margin-block-start: 4rem;
+}
+.story:hover .story__caption {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.story:hover .story__image {
+  transform: scale(1.05) translateX(-4rem);
+  filter: blur(3px) brightness(70%);
 }
 .story__shape {
   width: 15rem;
@@ -448,12 +470,28 @@ body {
   -webkit-clip-path: circle(50% at 50% 50%);
           clip-path: circle(50% at 50% 50%);
   transform: translateX(-3rem) skewX(12deg);
+  position: relative;
 }
 .story__image {
   height: 100%;
+  transform: translateX(-4rem) scale(1.4);
+  transition: all 0.4s;
 }
 .story__text {
   transform: skewX(12deg);
+}
+.story__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 25%);
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s;
 }
 
 .header {
