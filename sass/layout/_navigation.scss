@@ -15,6 +15,7 @@
         border-radius: 50%;
         z-index: 102;
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
+        cursor: pointer;
     }
 
     &__background {
@@ -95,5 +96,61 @@
     &__checkbox:checked ~ &__nav {
         visibility: visible;
         opacity: 1;
+    }
+
+    // HAMBURGER MENU
+
+    &__icon {
+        position: relative;
+        @include center-horizontal-vertical;
+        
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-gray-dark-1;
+            display: inline-block;
+
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            transition: all 0.2s;
+        }
+
+        &::before {
+            top: -.8rem;
+        }
+
+        &::after {
+            top: .8rem;
+        }
+    }
+
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+
+    &__button:hover &__icon::after {
+        top: 1rem;
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+
+        &::before {
+            transform: rotate(225deg);
+            top: 0;
+        }
+
+        &::after {
+            transform: rotate(-225deg);
+            top: 0;
+        }
     }
 }

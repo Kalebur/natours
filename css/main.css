@@ -577,6 +577,79 @@ body {
   text-align: center;
 }
 
+.modal {
+  background-color: rgba(0, 0, 0, 0.95);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s;
+}
+.modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  width: 80%;
+  height: 72%;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 33.3333333% 66.6666667%;
+  overflow: hidden;
+}
+.modal__content--content-box {
+  padding: 16rem 4rem;
+}
+.modal__content .close:link,
+.modal__content .close:active,
+.modal__content .close:visited {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  right: 2.5rem;
+  top: 2.5rem;
+  background-color: #55c57a;
+  z-index: 201;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.modal__image {
+  display: block;
+  width: 100%;
+}
+.modal__heading {
+  text-transform: uppercase;
+  margin: 2rem 0;
+}
+.modal__paragraph {
+  -moz-column-count: 2;
+       column-count: 2;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  -moz-column-rule: 1px solid #eee;
+       column-rule: 1px solid #eee;
+  margin-bottom: -4rem;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+.modal:target {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s;
+}
+
 .story {
   width: 50%;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
@@ -723,6 +796,7 @@ body {
   border-radius: 50%;
   z-index: 102;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 .navigation__background {
   height: 6rem;
@@ -785,6 +859,48 @@ body {
 .navigation__checkbox:checked ~ .navigation__nav {
   visibility: visible;
   opacity: 1;
+}
+.navigation__icon {
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.navigation__icon, .navigation__icon::before, .navigation__icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: #999;
+  display: inline-block;
+}
+.navigation__icon::before, .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.navigation__icon::before {
+  top: -0.8rem;
+}
+.navigation__icon::after {
+  top: 0.8rem;
+}
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem;
+}
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  transform: rotate(225deg);
+  top: 0;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  transform: rotate(-225deg);
+  top: 0;
 }
 
 .section-about {

@@ -1,0 +1,73 @@
+.modal {
+    background-color: rgba($color-black, .95);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s;
+
+    &__content {
+        @include center-horizontal-vertical;
+        border-radius: 3px;
+        width: 80%;
+        height: 72%;
+        background-color: $color-white;
+
+        display: grid;
+        grid-template-columns: 33.3333333% 66.6666667%;
+        overflow: hidden;
+
+        &--content-box {
+            padding: 16rem 4rem;
+        }
+
+        .close:link,
+        .close:active,
+        .close:visited {
+            width: 5rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: absolute;
+            right: 2.5rem;
+            top: 2.5rem;
+            background-color: $color-primary;
+            z-index: 201;
+            color: $color-white;
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+    }
+
+    &__heading {
+        text-transform: uppercase;
+        margin: 2rem 0;
+    }
+
+    &__paragraph {
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid $color-gray-light-2;
+        margin-bottom: -4rem;
+
+        hyphens: auto;
+    }
+
+    &:target {
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.4s;
+    }
+}

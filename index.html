@@ -17,7 +17,9 @@
     <body>
         <div class="navigation">
             <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-            <label for="navi-toggle" class="navigation__button">MENU</label>
+            <label for="navi-toggle" class="navigation__button">
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
 
             <div class="navigation__background">&nbsp;</div>
 
@@ -27,7 +29,7 @@
                     <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your Benefits</a></li>
                     <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular Tours</a></li>
                     <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Book Now</a></li>
+                    <li class="navigation__item"><a href="#book-modal" class="navigation__link"><span>05</span>Book Now</a></li>
                 </ul>
             </nav>
         </div>
@@ -239,7 +241,7 @@
                                 Large Tour Group
                             </label>
                         </div>
-                        <button class="btn btn--green">Next Step &rarr;</button>
+                        <button class="btn btn--green" onclick="window.location.href='#book-modal';">Next Step &rarr;</button>
                     </div>
                 </form>
             </section>
@@ -258,6 +260,22 @@
                 Built by <a href="#" class="footer__link">James S</a> following instruction of <a href="#" class="footer__link" target="_blank">Jonas Schmedtmann</a> from his Udemy course <a href="#" class="footer__link" target="_blank">Advanced CSS and SASS</a>. Copyright &copy; Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal and commercial use, but <strong>not</strong> to claim it as your own design. A credit to the original author, Jonas Schmedtmann, is of course highly appreciated.
             </p>
         </footer>
+
+        <div class="modal" id="book-modal">
+            <div class="modal__content">
+                <div class="modal__content--image-box">
+                    <img src="./img/nat-8.jpg" alt="Woman sitting in a row boat on a crystal clear lake." class="modal__image">
+                    <img src="./img/nat-9.jpg" alt="Man overlooking foggy valleys at dawn." class="modal__image">
+                </div>
+                <div class="modal__content--content-box">
+                    <h2 class="heading-secondary">Start Booking Now</h2>
+                    <h3 class="modal__heading">Important &ndash; Please Read the Terms and Conditions First</h3>
+                    <p class="modal__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita dolorum dolor suscipit inventore nulla eligendi repudiandae, neque perspiciatis, animi quasi laboriosam in incidunt recusandae? Veniam, sint. Libero dolorem vel neque quos, reprehenderit delectus, facilis quod blanditiis quae maiores exercitationem hic qui quam. Ratione sapiente totam reiciendis voluptatem excepturi praesentium eligendi culpa sed placeat sunt cupiditate deleniti, neque necessitatibus ipsum iure, optio dolorem numquam dolores laudantium tempora mollitia nulla? Quo fugit cumque laborum eaque exercitationem laudantium.</p>
+                    <a href="#" class="btn btn--green">Book Now</a>
+                    <a href="#" class="close">X</a>
+                </div>
+            </div>
+        </div>
         
     </body>
 </html>
